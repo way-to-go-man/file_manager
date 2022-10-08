@@ -8,6 +8,15 @@ def create_file(name, text = None):
             f.write(text)
     print(f'File {name} is created')
 
+#Запись текста в файл
+def fill_file(name, text = None):
+    if text:
+        with open(name, 'w') as f:
+            f.write(text)
+    else:
+        with open(name, 'w') as f:
+            f.write(input("Enter your text"))
+
 #Считываем данные файла
 def open_file(name):
     print(f'File {name} is opened')
@@ -58,11 +67,13 @@ def copy_filein(name, new_name, folder):
     copy_file(name, new_name)
     sh.move(new_name, folder)
 
+#Перемещаем файл
+def move_file(name, folder):
+    sh.move(name, folder)
+    print('File is moved')
 
+#Переименовываем файл
+def rename_file(name, new_name):
+    os.rename(name, new_name)
+    print("File is renamed")
 
-
-
-if __name__ == '__main__':
-    create_file('text.txt', 'Hello World!!!')
-    create_folder('folder')
-    copy_filein('text.txt', 'text1.txt','folder')
