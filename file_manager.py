@@ -33,5 +33,5 @@ if __name__ == '__main__':
     create_file('text.txt', 'some text')
     create_folder('somefolder')
     create_folder('somefolder')
-    delete_file('text.dat')
+    delete_file('text.txt')
     delete_file('somefolder')
