@@ -58,6 +58,8 @@ def rename_file(name, new_name):
 
 #Перемещаемся в другую папку/понимаемся на уровень вверх
 def move_directorty(name = '../'):
+    if os.getcwd() == os.path.abspath(os.curdir):
+        print('You are not allowed to leave from this folder')
     if name:
         os.chdir(name)
     print('Directory is changed')
@@ -76,4 +78,3 @@ def move_file(name, folder):
 def rename_file(name, new_name):
     os.rename(name, new_name)
     print("File is renamed")
-
