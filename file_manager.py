@@ -32,7 +32,7 @@ def delete_file(name):
     print(f'File {name} is deleted')
 
 #Копируем файл/папку
-def copy_file(name, new_name):
+def copy_file(name, new_name, folder = None):
     if os.path.isdir(name):
         try:
             sh.copytree(name, new_name)
@@ -47,22 +47,22 @@ def rename_file(name, new_name):
     os.rename(name, new_name)
     print(f'File {name} is renamed as {new_name}')
 
-#
-def move_directorty(name = None):
+#Перемещаемся в другую папку/понимаемся на уровень вверх
+def move_directorty(name = '../'):
     if name:
         os.chdir(name)
-    
     print('Directory is changed')
 
+#копируем файл в другую папку
+def copy_filein(name, new_name, folder):
+    copy_file(name, new_name)
+    sh.move(new_name, folder)
 
 
 
 
 
 if __name__ == '__main__':
-    create_file('text.txt')
-    create_file('text.txt', 'some text')
-    create_folder('somefolder')
-    create_folder('somefolder')
-    delete_file('text.txt')
-    delete_file('somefolder')
+    create_file('text.txt', 'Hello World!!!')
+    create_folder('folder')
+    copy_filein('text.txt', 'text1.txt','folder')
