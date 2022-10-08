@@ -47,12 +47,14 @@ def rename_file(name, new_name):
     os.rename(name, new_name)
     print(f'File {name} is renamed as {new_name}')
 
-def move_directorty(name):
-    os.chdir(name)
+#
+def move_directorty(name = None):
+    if name:
+        os.chdir(name)
+    
     print('Directory is changed')
 
-def return_indirectory():
-    pass
+
 
 
 
