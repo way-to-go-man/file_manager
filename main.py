@@ -5,13 +5,14 @@ command = sys.argv[1]
 
 if command == 'createfile':
     name = sys.argv[2]
-    create_file(name)
+    text = sys.argv[3]
+    create_file(name, text)
 
 if command == 'fillfile':
-    text = sys.argv[3]
-    fill_file(name, text)
+    name = sys.argv[2]
+    fill_file(name)
 
-if command == 'open file':
+if command == 'openfile':
     name = sys.argv[2]
     open_file(name)
 
