@@ -41,7 +41,7 @@ def delete_file(name):
     print(f'File {name} is deleted')
 
 #Копируем файл/папку
-def copy_file(name, new_name, folder = None):
+def copy_file(name, new_name):
     if os.path.isdir(name):
         try:
             sh.copytree(name, new_name)
@@ -73,8 +73,3 @@ def copy_filein(name, new_name, folder):
 def move_file(name, folder):
     sh.move(name, folder)
     print('File is moved')
-
-#Переименовываем файл
-def rename_file(name, new_name):
-    os.rename(name, new_name)
-    print("File is renamed")
